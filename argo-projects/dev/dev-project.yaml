@@ -1,26 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: dev-platform
+  name: dev
   namespace: argocd
 spec:
-  description: Development environment
+  description: "DEV GitOps project"
 
-  # Koji Git repoi su dozvoljeni za ovaj project
   sourceRepos:
-    - 'https://github.com/brokenbytedev/argocd.gitops.git'
+    - "*"
 
-  # Gde aplikacije smeju da se deploy-uju
   destinations:
-    - namespace: 'traefik'
+    - namespace: "*"
       server: https://kubernetes.default.svc
 
-  # Koje CLUSTER resurse sme da koristi
   clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"
 
-  # Koje NAMESPACE resourse sme da koristi
   namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"

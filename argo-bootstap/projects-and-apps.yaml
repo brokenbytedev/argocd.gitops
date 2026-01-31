@@ -1,20 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-projects-and-apps-dev
+  name: projects-bootstrap
   namespace: argocd
 spec:
-  project: dev
+  project: default
+
   source:
-    repoURL: https://github.com/brokenbytedev/gitops-argp.git
+    repoURL: https://github.com/brokenbytedev/argocd.gitops.git
     targetRevision: main
-    path: ./argo-projects
+    path: argo-projects
+
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
