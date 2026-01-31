@@ -1,18 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: dev
+  name: dev-platform
   namespace: argocd
 spec:
   description: "DEV GitOps project"
+  destinations:
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
 
   sourceRepos:
-    - "*"
-
-  destinations:
-    - namespace: "*"
-      server: https://kubernetes.default.svc
-
+  - https://github.com/brokenbytedev/argocd.gitops.git
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
