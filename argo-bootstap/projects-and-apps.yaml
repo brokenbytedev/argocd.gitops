@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/brokenbytedev/argocd.gitops.git
     targetRevision: main
-    path: argo-projects
+    path: argo-projects/dev
 
   destination:
     server: https://kubernetes.default.svc
