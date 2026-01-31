@@ -4,7 +4,7 @@ metadata:
   name: projects-bootstrap
   namespace: argocd
 spec:
-  project: default
+  project: dev-platform
 
   source:
     repoURL: https://github.com/brokenbytedev/argocd.gitops.git
