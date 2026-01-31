@@ -5,18 +5,14 @@ metadata:
   namespace: argocd
 spec:
   description: "DEV Platform project"
-
   sourceRepos:
     - "*"
-
   destinations:
     - namespace: "parkaero"
       server: https://kubernetes.default.svc
-
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
-
   namespaceResourceWhitelist:
     - group: "*"
       kind: "*"

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: dev
   source:
-    repoURL: https://github.com/brokenbytedev/gitops-argp.git
+    repoURL: https://github.com/brokenbytedev/argocd.gitops.git
     targetRevision: main
     path: ./platforms/dev
   destination:
