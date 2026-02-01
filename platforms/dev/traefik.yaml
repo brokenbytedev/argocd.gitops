@@ -30,12 +30,12 @@ spec:
         providers:
           kubernetesGateway:
             enabled: true
-        ports:
-          web:
-            port: 8080
-            protocol: TCP
-            expose:
-              default: true
+        # ports:
+        #   web:
+        #     port: 8080
+        #     protocol: TCP
+        #     expose:
+        #       default: true
         gateway:
           enabled: true
           name: traefik-gateway
