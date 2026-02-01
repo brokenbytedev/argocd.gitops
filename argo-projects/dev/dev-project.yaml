@@ -11,8 +11,8 @@ spec:
     server: https://kubernetes.default.svc
 
   sourceRepos:
-    - https://github.com/brokenbytedev/argocd.gitops.git
-    - https://traefik.github.io/charts
+  - https://github.com/brokenbytedev/argocd.gitops.git
+  - https://traefik.github.io/charts
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
