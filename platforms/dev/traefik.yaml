@@ -15,9 +15,9 @@ spec:
       values: |
         deployment:
           replicas: 1
-        ingressClass:
-          enabled: true
-          isDefaultClass: true
+        # ingressClass:
+        #   enabled: true
+        #   isDefaultClass: true
         service:
           type: LoadBalancer
           annotations:
