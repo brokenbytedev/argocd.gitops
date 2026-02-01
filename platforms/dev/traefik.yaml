@@ -15,48 +15,38 @@ spec:
       values: |
         deployment:
           replicas: 1
-
         ingressClass:
           enabled: true
           isDefaultClass: true
-
         service:
           type: LoadBalancer
           annotations:
             service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-
-        # GATEWAY API
         experimental:
           kubernetesGateway:
             enabled: true
             crds:
               enabled: true
-
         providers:
           kubernetesGateway:
             enabled: true
-
-        # ports MUST be objects (not booleans)
         ports:
           web:
-            port: 80
+            port: 8080
             protocol: TCP
             expose:
               default: true
-
         gateway:
           enabled: true
           name: traefik-gateway
           namespace: traefik
           listeners:
             web:
-              port: 80
+              port: 8080
               protocol: HTTP
-
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
-
   syncPolicy:
     automated:
       prune: true
