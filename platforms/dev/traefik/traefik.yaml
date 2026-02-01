@@ -5,7 +5,6 @@ metadata:
   namespace: argocd
 spec:
   project: dev-platform
-
   source:
     repoURL: https://traefik.github.io/charts
     chart: traefik
@@ -19,11 +18,9 @@ spec:
           isDefaultClass: true
         service:
           type: LoadBalancer
-
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
-
   syncPolicy:
     automated:
       prune: true
