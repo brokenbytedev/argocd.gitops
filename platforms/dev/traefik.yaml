@@ -22,6 +22,8 @@ spec:
           type: LoadBalancer
           annotations:
             service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+            service.beta.kubernetes.io/azure-load-balancer-ipv4: "10.50.1.150"
+
         experimental:
           kubernetesGateway:
             enabled: true
