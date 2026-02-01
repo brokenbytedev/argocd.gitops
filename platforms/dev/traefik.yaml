@@ -9,6 +9,7 @@ spec:
     repoURL: https://traefik.github.io/charts
     chart: traefik
     targetRevision: 39.0.0
+
     helm:
       values: |
         deployment:
@@ -20,7 +21,22 @@ spec:
           type: LoadBalancer
           annotations:
             service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-
+        experimental:
+          kubernetesGateway:
+            enabled: true
+            crds:
+              enabled: true
+        providers:
+          kubernetesGateway:
+            enabled: true
+        gateway:
+          enabled: true
+          name: traefik-gateway
+          namespace: traefik
+          listeners:
+            - name: web
+              port: 80
+              protocol: HTTP
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
