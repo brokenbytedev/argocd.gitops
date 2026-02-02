@@ -14,7 +14,7 @@ spec:
   - https://github.com/brokenbytedev/argocd.gitops.git
   - https://traefik.github.io/charts
   - https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
-  - oci://mcr.microsoft.com/oss/kubernetes-csi/secrets-store/azure-secrets-store
+  - oci://mcr.microsoft.com/oss/azure/secrets-store-csi-driver-provider-azure/charts
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
